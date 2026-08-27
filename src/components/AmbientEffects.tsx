@@ -55,6 +55,14 @@ export function AmbientEffects() {
 
   return (
     <>
+      <div className="cosmic-space" aria-hidden="true">
+        <div className="cosmic-star-layer cosmic-stars-c" />
+        <div className="cosmic-star-layer cosmic-stars-b" />
+        <div className="cosmic-star-layer cosmic-stars-a" />
+        <div className="cosmic-nebula cosmic-nebula-one" />
+        <div className="cosmic-nebula cosmic-nebula-two" />
+        <div className="cosmic-shooting-star" />
+      </div>
       <div className="scroll-progress" aria-hidden="true" />
       <div className="cursor-aurora" aria-hidden="true" />
       <div className="noise-layer" aria-hidden="true" />
