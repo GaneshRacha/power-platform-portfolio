@@ -10,6 +10,8 @@ const links = [
   ["Resume", "/resume"],
 ];
 
+const patternsUrl = "https://github.com/GaneshRacha/power-platform-patterns";
+
 export function Header() {
   return (
     <header className="site-header">
@@ -23,12 +25,14 @@ export function Header() {
         </nav>
         <div className="header-actions">
           <CommandPalette />
+          <a href={patternsUrl} target="_blank" rel="noreferrer" className="header-github">Patterns ↗</a>
           <a href={profile.githubUrl} target="_blank" rel="noreferrer" className="header-github">GitHub ↗</a>
           <Link href="/contact" className="header-contact">Connect <span>↗</span></Link>
           <details className="mobile-nav">
             <summary>Menu</summary>
             <div className="mobile-nav-panel">
               {[...links, ["Skills", "/skills"], ["Troubleshooting", "/troubleshooting"], ["AI & Learning", "/ai-learning"], ["Contact", "/contact"]].map(([label, href]) => <Link key={href} href={href}>{label}</Link>)}
+              <a href={patternsUrl} target="_blank" rel="noreferrer">Pattern Library ↗</a>
             </div>
           </details>
         </div>
