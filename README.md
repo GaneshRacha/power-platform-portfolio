@@ -2,6 +2,10 @@
 
 Interactive engineering portfolio focused on Microsoft Power Platform, Dataverse, custom extensibility, Azure integration, analytics, production support, and ALM.
 
+**Live site:** https://power-platform-portfolio-olive.vercel.app/  
+**Technical pattern library:** https://github.com/GaneshRacha/power-platform-patterns  
+**Architecture atlas:** https://github.com/GaneshRacha/power-platform-patterns/blob/main/docs/architecture-atlas.md
+
 ## What this repository contains
 
 - Curated reusable engineering implementation patterns
@@ -10,6 +14,16 @@ Interactive engineering portfolio focused on Microsoft Power Platform, Dataverse
 - Architecture patterns and execution-layer decision guidance
 - Production and ALM troubleshooting material
 - AI learning roadmap
+- Direct source links from implementation pages into the technical GitHub pattern library
+
+## Reviewer path
+
+If you want to evaluate the technical depth quickly:
+
+1. Open the live portfolio and review the implementation library.
+2. Use **View source on GitHub** from an implementation detail page.
+3. For a compact technical review, use the pattern repository's [Start Here guide](https://github.com/GaneshRacha/power-platform-patterns/blob/main/docs/start-here.md).
+4. For system-level architecture, open the [Architecture Atlas](https://github.com/GaneshRacha/power-platform-patterns/blob/main/docs/architecture-atlas.md).
 
 ## Technology
 
@@ -30,7 +44,7 @@ Open `http://localhost:3000`.
 npm run build
 ```
 
-The site is configured for a static Next.js export.
+The site is configured for a static Next.js export and deployed through Vercel.
 
 ## Portfolio safety
 
