@@ -2,30 +2,18 @@
 
 Interactive engineering portfolio focused on Microsoft Power Platform, Dataverse, custom extensibility, Azure integration, analytics, production support, and ALM.
 
-## Portfolio highlights
+## What this repository contains
 
-- 136 generic engineering patterns
-- 17 technical disciplines
-- 15 end-to-end solution playbooks
-- Professional experience and web resume
-- Architecture patterns and implementation details
-- Production/ALM troubleshooting guidance
+- Curated reusable engineering implementation patterns
+- End-to-end solution playbooks
+- Professional experience and interactive web resume
+- Architecture patterns and execution-layer decision guidance
+- Production and ALM troubleshooting material
 - AI learning roadmap
 
 ## Technology
 
-- Next.js
-- TypeScript
-- React
-- Tailwind CSS
-- Microsoft Power Platform
-- Dataverse
-- PCF
-- C# plugins and Custom APIs
-- Power Automate
-- Azure integrations
-- Power BI
-- ALM / Azure DevOps
+Next.js · TypeScript · React · Tailwind CSS · Power Platform · Dataverse · PCF · C# Plugins · Custom APIs · Power Automate · Azure · Power BI · ALM / Azure DevOps
 
 ## Run locally
 
@@ -46,10 +34,9 @@ The site is configured for a static Next.js export.
 
 ## Portfolio safety
 
-The technical examples in this repository are intentionally generic. The portfolio does not publish proprietary solution exports, production tenant identifiers, credentials, confidential client data, or internal application source code.
+Technical examples are intentionally generic. This repository does not publish proprietary solution exports, production tenant identifiers, credentials, confidential client data, or internal application source code.
 
 ## Author
 
-**Ganesh Racha**  
-Power Platform Developer & Solution Engineer  
-GitHub: https://github.com/GaneshRacha
+**Ganesh Racha** — Power Platform Developer & Solution Engineer  
+https://github.com/GaneshRacha
