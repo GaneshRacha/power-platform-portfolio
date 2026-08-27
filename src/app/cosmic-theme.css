@@ -1,0 +1,235 @@
+/* Cosmic Engineering theme — layered over the existing portfolio without changing page structure. */
+:root {
+  --cosmic-night: #050915;
+  --cosmic-navy: #071426;
+  --cosmic-blue: #63d9ff;
+  --cosmic-violet: #9a7cff;
+  --cosmic-pink: #e690ff;
+  --cosmic-mint: #8ff0ce;
+}
+
+html { background: var(--cosmic-night); }
+body {
+  background:
+    radial-gradient(circle at 76% 12%, rgba(119,86,255,.14), transparent 28rem),
+    radial-gradient(circle at 18% 8%, rgba(44,181,255,.10), transparent 26rem),
+    radial-gradient(circle at 50% 52%, rgba(54,68,138,.08), transparent 34rem),
+    linear-gradient(180deg,#050915 0%,#071426 48%,#050915 100%);
+}
+
+main,.site-footer { position: relative; z-index: 1; }
+.site-header { background: rgba(5,9,21,.73); }
+
+/* Fixed, GPU-friendly atmosphere. */
+.cosmic-space {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+  contain: strict;
+}
+.cosmic-star-layer {
+  position: absolute;
+  inset: -18%;
+  background-repeat: repeat;
+  transform: translate3d(0,0,0);
+  will-change: transform;
+}
+.cosmic-stars-a {
+  opacity: .72;
+  background-image:
+    radial-gradient(circle,rgba(255,255,255,.95) 0 1px,transparent 1.3px),
+    radial-gradient(circle,rgba(125,222,255,.78) 0 1px,transparent 1.3px),
+    radial-gradient(circle,rgba(189,166,255,.72) 0 1px,transparent 1.3px);
+  background-size: 173px 173px,241px 241px,317px 317px;
+  background-position: 23px 41px,97px 133px,181px 61px;
+  animation: cosmicDriftA 95s linear infinite;
+}
+.cosmic-stars-b {
+  opacity: .38;
+  background-image:
+    radial-gradient(circle,rgba(255,255,255,.74) 0 .8px,transparent 1.1px),
+    radial-gradient(circle,rgba(115,199,255,.6) 0 .9px,transparent 1.15px);
+  background-size: 109px 109px,199px 199px;
+  background-position: 17px 71px,61px 31px;
+  animation: cosmicDriftB 150s linear infinite;
+}
+.cosmic-stars-c {
+  opacity: .22;
+  background-image:
+    radial-gradient(circle,rgba(255,255,255,.9) 0 .7px,transparent 1px),
+    radial-gradient(circle,rgba(220,150,255,.55) 0 .8px,transparent 1.05px);
+  background-size: 71px 71px,137px 137px;
+  background-position: 9px 27px,43px 83px;
+  animation: cosmicDriftC 210s linear infinite;
+}
+.cosmic-nebula {
+  position: absolute;
+  border-radius: 50%;
+  opacity: .8;
+  transform: translate3d(0,0,0);
+}
+.cosmic-nebula-one {
+  width: min(60vw,760px);
+  aspect-ratio: 1;
+  top: -18%;
+  right: -10%;
+  background: radial-gradient(circle,rgba(113,72,255,.18),rgba(58,125,255,.08) 34%,transparent 68%);
+  animation: nebulaFloat 22s ease-in-out infinite alternate;
+}
+.cosmic-nebula-two {
+  width: min(50vw,620px);
+  aspect-ratio: 1;
+  left: -18%;
+  top: 34%;
+  background: radial-gradient(circle,rgba(40,205,255,.12),rgba(100,76,255,.06) 42%,transparent 70%);
+  animation: nebulaFloat 28s ease-in-out -8s infinite alternate-reverse;
+}
+.cosmic-shooting-star {
+  position: absolute;
+  top: 16%;
+  left: 66%;
+  width: 150px;
+  height: 1px;
+  opacity: 0;
+  background: linear-gradient(90deg,transparent,rgba(210,244,255,.95),rgba(120,219,255,.15),transparent);
+  box-shadow: 0 0 10px rgba(119,226,255,.45);
+  transform: rotate(-24deg) translate3d(0,0,0);
+  transform-origin: left center;
+  animation: shootingStar 17s ease-in-out infinite;
+}
+.cosmic-shooting-star::after {
+  content: "";
+  position: absolute;
+  right: 8px;
+  top: -2px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: white;
+  box-shadow: 0 0 14px #8ee8ff;
+}
+
+@keyframes cosmicDriftA { to { transform: translate3d(-84px,72px,0); } }
+@keyframes cosmicDriftB { to { transform: translate3d(56px,-96px,0); } }
+@keyframes cosmicDriftC { to { transform: translate3d(-44px,-52px,0); } }
+@keyframes nebulaFloat { from { transform: translate3d(0,0,0) scale(1); } to { transform: translate3d(28px,20px,0) scale(1.05); } }
+@keyframes shootingStar {
+  0%,78%,100% { opacity: 0; transform: rotate(-24deg) translate3d(0,0,0); }
+  81% { opacity: .9; }
+  88% { opacity: 0; transform: rotate(-24deg) translate3d(-420px,245px,0); }
+}
+
+/* Hero: richer nebula + cosmic title, without changing the composition. */
+.hero-v7 { isolation: isolate; }
+.hero-v7::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 76% 42%,rgba(90,75,255,.16),transparent 22rem),
+    radial-gradient(circle at 69% 55%,rgba(62,206,255,.09),transparent 26rem);
+}
+.hero-grid-bg {
+  opacity: .7;
+  background:
+    radial-gradient(circle at 76% 36%,rgba(101,210,255,.14),transparent 20rem),
+    radial-gradient(circle at 85% 52%,rgba(169,127,255,.13),transparent 24rem),
+    linear-gradient(rgba(139,194,255,.022) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(139,194,255,.022) 1px,transparent 1px);
+  background-size: auto,auto,72px 72px,72px 72px;
+}
+.hero-copy h1 em {
+  color: transparent;
+  -webkit-text-stroke: 0;
+  background: linear-gradient(110deg,#bfaeff 5%,#75dcff 52%,#95f0d4 96%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  filter: drop-shadow(0 0 24px rgba(108,174,255,.12));
+}
+.hero-kicker { color: #b9c8da; }
+.live-dot { background:#9b7cff; box-shadow:0 0 0 6px rgba(155,124,255,.08),0 0 22px rgba(155,124,255,.55); }
+.hero-visual-caption { border-color:rgba(142,197,255,.16); background:rgba(5,11,25,.74); }
+.hero-profile-card { box-shadow:0 28px 75px rgba(0,0,0,.5),0 0 70px rgba(113,87,255,.11); }
+
+/* Make the existing orbit read as a technology constellation. */
+.orbit-ring { border-color:rgba(139,196,255,.2); }
+.ring-two { border-color:rgba(167,132,255,.25); }
+.ring-three { border-color:rgba(143,240,206,.23); }
+.orbit-glow {
+  background:radial-gradient(circle,rgba(97,177,255,.18),rgba(130,93,255,.08) 38%,transparent 68%);
+}
+.orbit-core {
+  border-color:rgba(136,215,255,.34);
+  background:radial-gradient(circle at 38% 28%,rgba(115,97,255,.22),rgba(7,17,31,.91));
+  box-shadow:inset 0 0 38px rgba(101,206,255,.1),0 0 58px rgba(117,82,255,.12);
+}
+.orbit-node {
+  border-color:rgba(159,199,255,.17);
+  background:linear-gradient(145deg,rgba(12,27,50,.94),rgba(13,18,38,.91));
+}
+.n1,.n4 { box-shadow:0 10px 30px rgba(0,0,0,.28),0 0 20px rgba(143,240,206,.05); }
+.n2,.n5 { box-shadow:0 10px 30px rgba(0,0,0,.28),0 0 20px rgba(99,217,255,.06); }
+.n3,.n6 { box-shadow:0 10px 30px rgba(0,0,0,.28),0 0 20px rgba(154,124,255,.07); }
+.orbit-signal { background:#c1a8ff; box-shadow:0 0 16px #9a7cff; }
+
+/* Panels feel like mission consoles while preserving current readability. */
+.glass {
+  background:linear-gradient(145deg,rgba(11,24,45,.72),rgba(7,14,29,.56));
+  border-color:rgba(145,188,255,.10);
+}
+.work-tile,.playbook-card-v7,.discipline-pill {
+  position:relative;
+  overflow:hidden;
+}
+.work-tile::before,.playbook-card-v7::before {
+  content:"";
+  position:absolute;
+  inset:0 auto auto 0;
+  width:100%;
+  height:1px;
+  background:linear-gradient(90deg,transparent,rgba(99,217,255,.6),rgba(154,124,255,.45),transparent);
+  opacity:.7;
+}
+.work-tile:hover,.playbook-card-v7:hover {
+  border-color:rgba(132,205,255,.24);
+  box-shadow:0 22px 60px rgba(0,0,0,.2),0 0 34px rgba(99,166,255,.05);
+}
+.section-number { color:#9c8aff; }
+.tech-marquee i { background:#9a7cff; box-shadow:0 0 10px rgba(154,124,255,.45); }
+.scroll-progress { background:linear-gradient(90deg,#63d9ff,#9a7cff,#e690ff,#8ff0ce); }
+.cursor-aurora {
+  background:radial-gradient(circle,rgba(102,99,255,.08),rgba(47,190,255,.045) 35%,transparent 65%);
+}
+
+/* Inner pages inherit a restrained cosmic glow. */
+main > section.container-shell::before {
+  content:"";
+  position:fixed;
+  width:32rem;
+  height:32rem;
+  right:-15rem;
+  top:18vh;
+  border-radius:50%;
+  background:radial-gradient(circle,rgba(116,79,255,.07),transparent 68%);
+  pointer-events:none;
+  z-index:-1;
+}
+.code-panel { box-shadow:0 24px 70px rgba(0,0,0,.3),0 0 45px rgba(92,149,255,.05); }
+
+@media (max-width: 720px) {
+  .cosmic-stars-c { opacity:.12; }
+  .cosmic-shooting-star { display:none; }
+  .cosmic-nebula { opacity:.58; }
+  .cursor-aurora { display:none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cosmic-star-layer,.cosmic-nebula,.cosmic-shooting-star,.orbit-ring,.orbit-node,.orbit-signal,.tech-marquee-track {
+    animation:none !important;
+  }
+  [data-reveal] { transition-duration:.01ms !important; }
+}
