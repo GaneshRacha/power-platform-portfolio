@@ -18,9 +18,18 @@ const categoryFolder: Record<string, string> = {
   "Security": "security",
 };
 
+const sourceOverrides: Record<string, string> = {
+  "business-calendar-engine": "power-automate/business-calendar-engine",
+  "dataverse-web-api-library": "javascript/dataverse-web-api-utility-library",
+  "defensive-flow-record-handling": "power-automate/defensive-dataverse-recordid-flow",
+};
+
 const patternsRepository = "https://github.com/GaneshRacha/power-platform-patterns";
 
 export function getPatternSourceUrl(category: string, slug: string): string | null {
+  const override = sourceOverrides[slug];
+  if (override) return `${patternsRepository}/tree/main/${override}`;
+
   const folder = categoryFolder[category];
   if (!folder) return null;
   return `${patternsRepository}/tree/main/${folder}/${slug}`;
